@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Changer</title>
+    <style>
+        :root {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #222;
+            background-color: #f7f7f7;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.4s ease;
+        }
+
+        button {
+            padding: 16px 28px;
+            border: none;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #4f8bff, #6dd4ff);
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 14px 28px rgba(0, 0, 0, 0.15);
+            background: linear-gradient(135deg, #6a9cff, #84e0ff);
+        }
+
+        button:active {
+            transform: translateY(0);
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+        }
+    </style>
+</head>
+<body>
+    <button>Change Color</button>
+</body>
+<script>
+    let button = document.querySelector('button');
+    button.addEventListener('click', () => {
+        document.body.style.backgroundColor = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+    });
+</script>
+</html>
